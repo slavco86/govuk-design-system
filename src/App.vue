@@ -15,7 +15,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "node_modules/govuk-frontend/govuk/all";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
