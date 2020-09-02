@@ -1,7 +1,7 @@
 <template>
   <div>
     <GovukHeader />
-    <GovukBackLink />
+    <GovukBackLink :link-action="navigateToPreviousRoute" />
     <router-view />
   </div>
 </template>

@@ -6,10 +6,10 @@
 
 <script>
 import Vue from "vue";
-import navigateToNextQuestion from "./mixins/navigateToNextQuestion";
+import navigationFunctions from "./mixins/navigationFunctions";
 import getAndSetFormValues from "./mixins/getAndSetFormValues";
 
-Vue.mixin(navigateToNextQuestion);
+Vue.mixin(navigationFunctions);
 Vue.mixin(getAndSetFormValues);
 
 export default {

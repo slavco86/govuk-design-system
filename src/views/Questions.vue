@@ -8,7 +8,7 @@
         />
         <GovukButton
           button-text="Continue"
-          :button-action="navigateToNextQuestion"
+          :button-action="navigateToNextRoute"
         />
       </main>
     </div>
