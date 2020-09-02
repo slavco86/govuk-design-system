@@ -3,7 +3,7 @@
     <GovukHeader />
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper" id="main-content" role="main">
-        <router-view :legend-text="fieldSetLegend" />
+        <router-view :legend-text="fieldSetLegend" :form-question-label="formQuestionLabel" />
         <GovukButton
           button-text="Continue"
           :button-action="navigateToNextQuestion"
@@ -38,6 +38,19 @@ export default {
           return "What is your gender?";
         default:
           return "Error in fieldSetLegend computed property";
+      }
+    },
+    formQuestionLabel() {
+      const { name } = this.$route;
+      switch (name) {
+        case "Name":
+          return "Full Name"
+        case "Date of Birth":
+          return "Date of Birth"
+        case "Gender":
+          return "Gender"
+        default:
+          return "Error in fieldSetLabel computed property";
       }
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <input v-model="inputValue" class="govuk-input" id="address-line-1"/>
+  <input v-model="inputValue" class="govuk-input"/>
 </template>
 
 <script>

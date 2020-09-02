@@ -1,6 +1,6 @@
 <template>
   <div class="govuk-form-group">
-    <GovukLabel label-text="First Name" />
+    <GovukLabel :form-question-label="formQuestionLabel"/>
     <GovukInput />
   </div>
 </template>
@@ -13,6 +13,9 @@ export default {
   components: {
     GovukInput,
     GovukLabel,
+  },
+  props: {
+    formQuestionLabel: String,
   },
 };
 </script>

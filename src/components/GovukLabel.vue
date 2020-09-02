@@ -1,6 +1,6 @@
 <template>
     <label class="govuk-label">
-        {{ labelText }}
+        {{ formQuestionLabel }}
     </label>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         name: "GovukLabel",
         props: {
-            labelText: String,
+            formQuestionLabel: String,
         },
     };
 </script>

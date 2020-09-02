@@ -1,7 +1,7 @@
 <template>
   <fieldset class="govuk-fieldset">
     <GovukFieldsetLegend :legend-text="legendText"/>
-    <GovukFormGroup />
+    <GovukFormGroup :form-question-label="formQuestionLabel"/>
   </fieldset>
 </template>
 
@@ -18,6 +18,9 @@ export default {
   props: {
     legendText: {
       type: String,
+    },
+    formQuestionLabel: {
+      type: String
     }
   },
 };
