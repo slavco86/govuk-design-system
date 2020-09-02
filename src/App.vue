@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <Layout msg="New Application" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Layout from "./views/Layout.vue";
-
 export default {
   name: "App",
-  components: {
-    Layout,
-  },
 };
 </script>
 
