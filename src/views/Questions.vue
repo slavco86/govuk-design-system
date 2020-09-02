@@ -1,9 +1,11 @@
 <template>
   <div>
-    <GovukHeader />
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper" id="main-content" role="main">
-        <router-view :legend-text="fieldSetLegend" :form-question-label="formQuestionLabel" />
+        <router-view
+          :legend-text="fieldSetLegend"
+          :form-question-label="formQuestionLabel"
+        />
         <GovukButton
           button-text="Continue"
           :button-action="navigateToNextQuestion"
@@ -15,14 +17,12 @@
 </template>
 
 <script>
-import GovukHeader from "../components/GovukHeader";
 import GovukButton from "../components/GovukButton";
 import GovukFooter from "../components/GovukFooter";
 
 export default {
   name: "Questions",
   components: {
-    GovukHeader,
     GovukButton,
     GovukFooter,
   },
@@ -44,11 +44,11 @@ export default {
       const { name } = this.$route;
       switch (name) {
         case "Name":
-          return "Full Name"
+          return "Full Name";
         case "Date of Birth":
-          return "Date of Birth"
+          return "Date of Birth";
         case "Gender":
-          return "Gender"
+          return "Gender";
         default:
           return "Error in fieldSetLabel computed property";
       }
