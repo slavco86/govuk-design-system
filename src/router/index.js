@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '../views/Layout.vue'
+import Questions from '../views/Questions.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'Layout',
-    component: Layout
+    component: Layout,
+    children: [
+      {
+        path: "/",
+        name: "Questions",
+        component: Questions
+      }
+    ]
   },
 ]
 
