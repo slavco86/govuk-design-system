@@ -5,8 +5,5 @@
 <script>
     export default {
         name: "GovukInput",
-        props: {
-            headingText: String,
-        },
     };
 </script>
