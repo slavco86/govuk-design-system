@@ -7,8 +7,10 @@
 <script>
 import Vue from "vue";
 import navigateToNextQuestion from "./mixins/navigateToNextQuestion";
+import getAndSetFormValues from "./mixins/getAndSetFormValues";
 
 Vue.mixin(navigateToNextQuestion);
+Vue.mixin(getAndSetFormValues);
 
 export default {
   name: "App",
