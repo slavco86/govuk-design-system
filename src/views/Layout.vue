@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'HelloWorld',
+        name: 'Layout',
         props: {
             msg: String
         }
