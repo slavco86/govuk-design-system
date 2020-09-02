@@ -1,6 +1,6 @@
 <template>
   <div class="govuk-form-group">
-    <GovukLabel />
+    <GovukLabel label-text="First Name" />
     <GovukInput />
   </div>
 </template>
