@@ -1,9 +1,18 @@
 <template>
-    <footer class="govuk-footer"></footer>
+  <footer class="govuk-footer">
+      <div class="govuk-width-container">
+      <GovukFooterMeta />
+      </div>
+  </footer>
 </template>
 
 <script>
-    export default {
-        name: "GovukFooter",
-    };
+import GovukFooterMeta from "./GovukFooterMeta";
+
+export default {
+  name: "GovukFooter",
+  components: {
+    GovukFooterMeta,
+  },
+};
 </script>
