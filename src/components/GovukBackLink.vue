@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$route" class="govuk-width-container">
+  <div v-if="this.$route.name !== 'Name'" class="govuk-width-container">
     <a @click="linkAction" class="govuk-back-link">Back</a>
   </div>
 </template>
