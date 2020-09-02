@@ -5,6 +5,11 @@
 </template>
 
 <script>
+import Vue from "vue";
+import navigateToNextQuestion from "./mixins/navigateToNextQuestion";
+
+Vue.mixin(navigateToNextQuestion);
+
 export default {
   name: "App",
 };

@@ -4,7 +4,10 @@
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper" id="main-content" role="main">
         <router-view :legend-text="fieldSetLegend" />
-        <GovukButton button-text="Continue" />
+        <GovukButton
+          button-text="Continue"
+          :button-action="navigateToNextQuestion"
+        />
       </main>
     </div>
     <GovukFooter />
@@ -24,7 +27,6 @@ export default {
     GovukFooter,
   },
   computed: {
-    // eslint-disable-next-line vue/return-in-computed-property
     fieldSetLegend() {
       const { name } = this.$route;
       switch (name) {
@@ -34,8 +36,10 @@ export default {
           return "What is your date of birth?";
         case "Gender":
           return "What is your gender?";
+        default:
+          return "Error in fieldSetLegend computed property";
       }
     },
-  }
+  },
 };
 </script>
