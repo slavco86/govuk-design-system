@@ -13,11 +13,11 @@ Vue.use(VueRouter)
     children: [
       {
         path: "/",
-        name: "Questions",
+        redirect: 'name',
         component: Questions,
         children: [
           {
-            path: "/",
+            path: "/name",
             name: "Name",
             component: GovukFieldset,
             props: true
