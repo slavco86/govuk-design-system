@@ -1,10 +1,18 @@
 <template>
-    <div class="govuk-form-group">
-    </div>
+  <div class="govuk-form-group">
+    <GovukLabel />
+    <GovukInput />
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "GovukFormGroup",
-    };
+import GovukInput from "./GovukInput";
+import GovukLabel from "./GovukLabel";
+export default {
+  name: "GovukFormGroup",
+  components: {
+    GovukInput,
+    GovukLabel,
+  },
+};
 </script>
