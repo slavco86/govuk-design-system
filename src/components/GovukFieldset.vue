@@ -1,6 +1,6 @@
 <template>
   <fieldset class="govuk-fieldset">
-    <GovukFieldsetLegend />
+    <GovukFieldsetLegend :legend-text="legendText"/>
     <GovukFormGroup />
   </fieldset>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     GovukFieldsetLegend,
     GovukFormGroup,
+  },
+  props: {
+    legendText: {
+      type: String,
+    }
   },
 };
 </script>
