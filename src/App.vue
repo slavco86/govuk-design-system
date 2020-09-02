@@ -20,6 +20,10 @@ export default {
 <style lang="scss">
 @import "node_modules/govuk-frontend/govuk/all";
 
+body {
+  margin: 0 auto;
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
 }
