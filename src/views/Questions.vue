@@ -1,8 +1,12 @@
 <template>
   <div>
     <GovukHeader />
-    <GovukFieldset />
-    <GovukButton button-text="Continue" />
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content" role="main">
+        <GovukFieldset />
+        <GovukButton button-text="Continue" />
+      </main>
+    </div>
     <GovukFooter />
   </div>
 </template>
@@ -19,7 +23,7 @@ export default {
     GovukHeader,
     GovukFieldset,
     GovukButton,
-    GovukFooter
+    GovukFooter,
   },
 };
 </script>
