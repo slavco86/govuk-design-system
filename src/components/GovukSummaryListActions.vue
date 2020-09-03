@@ -1,13 +1,18 @@
 <template>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="#">
-      Change<span class="govuk-visually-hidden"> contact information</span>
-    </a>
+    <router-link :to="{ name: `${formDataKeys}` }"
+      >Change<span class="govuk-visually-hidden">
+        contact information</span
+      ></router-link
+    >
   </dd>
 </template>
 
 <script>
-    export default {
-        name: "GovukSummaryListActions",
-    };
+export default {
+  name: "GovukSummaryListActions",
+  props: {
+    formDataKeys: String,
+  },
+};
 </script>
