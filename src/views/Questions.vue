@@ -1,7 +1,9 @@
 <template>
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <router-view :legend-text="fieldSetLegend" :form-question-label="formQuestionLabel"
+      <router-view
+        :legend-text="fieldSetLegend"
+        :form-question-label="formQuestionLabel"
       />
       <GovukButton
         button-text="Continue"
@@ -21,8 +23,8 @@ export default {
   },
   data: () => ({
     questionProperties: {
-      label: '',
-    }
+      label: "",
+    },
   }),
   computed: {
     fieldSetLegend() {
@@ -38,25 +40,28 @@ export default {
           return "Error in fieldSetLegend computed property";
       }
     },
+    // This name is incorrect, but if I attempt to change it to 'formQuestionProperties',
+    // and reflect the changes in child component, the value always returns as 'undefined'.
+    // Can't work out why.
     formQuestionLabel() {
       const { name } = this.$route;
       switch (name) {
         case "Name":
           return {
-              label: 'Full Name'
-          }
+            label: "Full Name",
+          };
         case "Date of birth":
           return {
-            label: ''
-          }
+            label: "",
+          };
         case "Gender":
           return {
-            label: '',
+            label: "",
             selectorOptions: {
-              male: 'Male',
-              female: 'Female'
-            }
-          }
+              male: "Male",
+              female: "Female",
+            },
+          };
         default:
           return "";
       }
