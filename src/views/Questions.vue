@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper" id="main-content" role="main">
         <router-view
@@ -12,19 +11,15 @@
         />
       </main>
     </div>
-    <GovukFooter />
-  </div>
 </template>
 
 <script>
 import GovukButton from "../components/GovukButton";
-import GovukFooter from "../components/GovukFooter";
 
 export default {
   name: "Questions",
   components: {
     GovukButton,
-    GovukFooter,
   },
   computed: {
     fieldSetLegend() {
