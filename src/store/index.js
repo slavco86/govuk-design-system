@@ -6,21 +6,21 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     formData: {
-      name: null,
-      dateOfBirth: null,
-      gender: null,
+      'Name': null,
+      'Date of birth': null,
+      'Gender': null,
     },
   },
   mutations: {
-    setFormDataFirstName: (state, value) => (state.formData.name = value),
+    setFormDataFirstName: (state, value) => (state.formData['Name'] = value),
     setFormDataDateOfBirth: (state, value) =>
-      (state.formData.dateOfBirth = value),
-    setFormDataGender: (state, value) => (state.formData.gender = value),
+      (state.formData['Date of birth'] = value),
+    setFormDataGender: (state, value) => (state.formData['Gender'] = value),
   },
   getters: {
-    getNameValue: (state) => state.formData.name,
-    getDOBValue: (state) => state.formData.dateOfBirth,
-    getGenderValue: (state) => state.formData.gender,
+    getNameValue: (state) => state.formData['Name'],
+    getDOBValue: (state) => state.formData['Date of birth'],
+    getGenderValue: (state) => state.formData['Gender'],
   },
   actions: {},
   modules: {},
