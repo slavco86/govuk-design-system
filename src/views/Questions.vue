@@ -48,22 +48,6 @@ export default {
           return "Error in fieldSetLabel computed property";
       }
     },
-    formSelectionOptions() {
-      const { name } = this.$route;
-      switch (name) {
-        case "Gender":
-          this.$store.dispatch("updateFormSelectorOptions", {
-              female: "Female",
-              male: "Male",
-          });
-          this.$store.dispatch("updateQuestionHasSelectorOptions", true);
-          return;
-        default:
-          this.$store.dispatch("updateFormSelectorOptions", null);
-          this.$store.dispatch("updateQuestionHasSelectorOptions", false);
-          return "Error in formQuestionSelectionOptions computed property";
-      }
-    },
   },
 };
 </script>
