@@ -21,28 +21,40 @@ export default {
         }
       },
     },
-    dateOfBirthDay: {
+    dateDay: {
       get() {
-        return this.$store.getters.getDateOfBirthDay;
+        if (this.$route.name === "Date of birth") {
+          return this.$store.getters.getDateOfBirthDay;
+        }
       },
       set(value) {
-        this.$store.commit("setFormDataDateOfBirthDay", value);
+        if (this.$route.name === "Date of birth") {
+          this.$store.commit("setFormDataDateOfBirthDay", value);
+        }
       },
     },
-    dateOfBirthMonth: {
+    dateMonth: {
       get() {
-        return this.$store.getters.getDateOfBirthMonth;
+        if (this.$route.name === "Date of birth") {
+          return this.$store.getters.getDateOfBirthMonth;
+        }
       },
       set(value) {
-        this.$store.commit("setFormDataDateOfBirthMonth", value);
+        if (this.$route.name === "Date of birth") {
+          this.$store.commit("setFormDataDateOfBirthMonth", value);
+        }
       },
     },
-    dateOfBirthYear: {
+    dateYear: {
       get() {
-        return this.$store.getters.getDateOfBirthDay;
+        if (this.$route.name === "Date of birth") {
+          return this.$store.getters.getDateOfBirthDay;
+        }
       },
       set(value) {
-        this.$store.commit("setFormDataDateOfBirthYear", value);
+        if (this.$route === "Date of birth") {
+          this.$store.commit("setFormDataDateOfBirthYear", value);
+        }
       },
     },
   },

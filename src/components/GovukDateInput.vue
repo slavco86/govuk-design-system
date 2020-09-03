@@ -6,7 +6,7 @@
           Day
         </label>
         <input
-          v-model="dateOfBirthDay"
+          v-model="dateDay"
           class="govuk-input govuk-date-input__input govuk-input--width-2"
           id="dob-day"
           name="dob-day"
@@ -23,7 +23,7 @@
           Month
         </label>
         <input
-          v-model="dateOfBirthMonth"
+          v-model="dateMonth"
           class="govuk-input govuk-date-input__input govuk-input--width-2"
           id="dob-month"
           name="dob-month"
@@ -40,7 +40,7 @@
           Year
         </label>
         <input
-          v-model="dateOfBirthYear"
+          v-model="dateYear"
           class="govuk-input govuk-date-input__input govuk-input--width-4"
           id="dob-year"
           name="dob-year"
