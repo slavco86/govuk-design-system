@@ -19,8 +19,7 @@ const routes = [
         component: Questions,
         children: [
           {
-            path: "/name",
-            name: "Name",
+            path: "/",
             component: GovukFieldset,
             props: true,
             children: [
@@ -35,7 +34,6 @@ const routes = [
 
           {
             path: "/date-of-birth",
-            name: "Date of birth",
             component: GovukFieldset,
             props: true,
             children: [
@@ -49,7 +47,6 @@ const routes = [
           },
           {
             path: "/gender",
-            name: "Gender",
             component: GovukFieldset,
             props: true,
             children: [
