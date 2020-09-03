@@ -48,11 +48,11 @@ export default {
     dateYear: {
       get() {
         if (this.$route.name === "Date of birth") {
-          return this.$store.getters.getDateOfBirthDay;
+          return this.$store.getters.getDateOfBirthYear;
         }
       },
       set(value) {
-        if (this.$route === "Date of birth") {
+        if (this.$route.name === "Date of birth") {
           this.$store.commit("setFormDataDateOfBirthYear", value);
         }
       },

@@ -25,6 +25,7 @@ export default new Vuex.Store({
       state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
     },
     setFormDataDateOfBirthMonth(state, value) {
+      console.log("value: ", value);
       state.dateOfBirthRawValues[1] = value;
       state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
     },
