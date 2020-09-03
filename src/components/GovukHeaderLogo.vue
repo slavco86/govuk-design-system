@@ -1,6 +1,6 @@
 <template>
   <div class="govuk-header__logo">
-    <a href="#" class="govuk-header__link govuk-header__link--homepage">
+    <router-link :to="{ path: '/' }" class="govuk-header__link govuk-header__link--homepage">
       <span class="govuk-header__logotype">
         <svg
           aria-hidden="true"
@@ -26,7 +26,7 @@
         </svg>
         <span class="govuk-header__logotype-text"> GOV.UK </span>
       </span>
-    </a>
+    </router-link>
   </div>
 </template>
 
