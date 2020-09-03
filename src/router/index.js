@@ -53,7 +53,7 @@ const routes = [
                 props: true,
                 children: [
                   {
-                    path: "/name",
+                    path: "/date-of-birth",
                     name: "Date of birth",
                     component: GovukDateInput,
                     props: true,
@@ -73,7 +73,7 @@ const routes = [
                 props: true,
                 children: [
                   {
-                    path: "/name",
+                    path: "/gender",
                     name: "Gender",
                     component: GovukRadios,
                     props: true,
