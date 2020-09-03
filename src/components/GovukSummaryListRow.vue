@@ -1,7 +1,7 @@
 <template>
   <div class="govuk-summary-list__row">
-    <GovukSummaryListKey />
-    <GovukSummaryListValue />
+    <GovukSummaryListKey :form-data-keys="formDataKeys"/>
+    <GovukSummaryListValue :form-data-values="formDataValues"/>
     <GovukSummaryListActions />
   </div>
 </template>
@@ -16,6 +16,10 @@ export default {
     GovukSummaryListKey,
     GovukSummaryListValue,
     GovukSummaryListActions
+  },
+  props: {
+    formDataValues: String,
+    formDataKeys: String,
   },
 };
 </script>

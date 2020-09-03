@@ -18,6 +18,7 @@ export default new Vuex.Store({
     setFormDataGender: (state, value) => (state.formData['Gender'] = value),
   },
   getters: {
+    getFormData: (state) => state.formData,
     getNameValue: (state) => state.formData['Name'],
     getDOBValue: (state) => state.formData['Date of birth'],
     getGenderValue: (state) => state.formData['Gender'],
