@@ -58,7 +58,7 @@ export default {
         case "Gender":
           return {
             label: "",
-            selectorOptions: {
+            radioOptions: {
               male: "Male",
               female: "Female",
             },

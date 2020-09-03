@@ -1,15 +1,17 @@
 <template>
   <div class="govuk-form-group">
     <GovukLabel :form-question-label="formQuestionLabel.label" />
-    <div v-if="formQuestionLabel.selectorOptions">
-      <router-view
-        :form-selector-options="item"
-        v-for="item in formQuestionLabel.selectorOptions"
-        :key="item"
-      />
+    <div v-if="formQuestionLabel.radioOptions">
+      <div class="govuk-radios govuk-radios--inline">
+        <router-view
+          :form-selector-options="item"
+          v-for="item in formQuestionLabel.radioOptions"
+          :key="item"
+        />
+      </div>
     </div>
     <div v-else>
-      <router-view :form-question-label="formQuestionLabel"/>
+      <router-view :form-question-label="formQuestionLabel" />
     </div>
   </div>
 </template>
