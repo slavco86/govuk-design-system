@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: "GovUKDateInput",
+  name: "GovUKDateInputWrapper",
 };
 </script>
