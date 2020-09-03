@@ -13,7 +13,7 @@ Vue.use(VueRouter)
     children: [
       {
         path: "/",
-        redirect: 'name',
+        redirect: '/name',
         component: Questions,
         children: [
           {
