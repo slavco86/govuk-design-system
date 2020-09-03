@@ -6,6 +6,7 @@ import SummaryList from "../views/SummaryList.vue";
 import GovukFieldset from "../components/GovukFieldset.vue";
 import GovukFormGroup from "../components/GovukFormGroup.vue";
 import GovukInput from "../components/GovukInput.vue";
+import GovukDateInput from "../components/GovukDateInput.vue";
 
 Vue.use(VueRouter);
 
@@ -53,7 +54,7 @@ const routes = [
                   {
                     path: "/name",
                     name: "Date of birth",
-                    component: GovukInput,
+                    component: GovukDateInput,
                     props: true,
                   },
                 ]
