@@ -9,7 +9,7 @@
       />
     </div>
     <div v-else>
-      <router-view />
+      <router-view :form-question-label="formQuestionLabel"/>
     </div>
   </div>
 </template>

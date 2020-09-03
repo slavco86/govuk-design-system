@@ -53,6 +53,7 @@ export default {
         case "Date of birth":
           return {
             label: "",
+            answerHint: "For example, 31 3 1980",
           };
         case "Gender":
           return {
