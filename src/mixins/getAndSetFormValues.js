@@ -6,8 +6,6 @@ export default {
         switch (name) {
           case "Name":
             return this.$store.getters.getNameValue;
-          case "Date of birth":
-            return this.$store.getters.getDOBValue;
           case "Gender":
             return this.$store.getters.getGenderValue;
         }
@@ -17,13 +15,34 @@ export default {
         switch (name) {
           case "Name":
             this.$store.commit("setFormDataFirstName", value);
-            break
-          case "Date of birth":
-            this.$store.commit("setFormDataDateOfBirth", value);
-            break
+            break;
           case "Gender":
             this.$store.commit("setFormDataGender", value);
         }
+      },
+    },
+    dateOfBirthDay: {
+      get() {
+        return this.$store.getters.getDateOfBirthDay;
+      },
+      set(value) {
+        this.$store.commit("setFormDataDateOfBirthDay", value);
+      },
+    },
+    dateOfBirthMonth: {
+      get() {
+        return this.$store.getters.getDateOfBirthMonth;
+      },
+      set(value) {
+        this.$store.commit("setFormDataDateOfBirthMonth", value);
+      },
+    },
+    dateOfBirthYear: {
+      get() {
+        return this.$store.getters.getDateOfBirthDay;
+      },
+      set(value) {
+        this.$store.commit("setFormDataDateOfBirthYear", value);
       },
     },
   },
