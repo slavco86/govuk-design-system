@@ -40,12 +40,8 @@ export default {
       switch (name) {
         case "Name":
           return "Full Name";
-        case "Date of birth":
-          return "Date of birth";
-        case "Gender":
-          return "Gender";
         default:
-          return "Error in fieldSetLabel computed property";
+          return "";
       }
     },
   },
