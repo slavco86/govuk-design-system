@@ -18,23 +18,5 @@ export default {
     GovukBackLink,
     GovukFooter
   },
-  computed: {
-    formSelectionOptions() {
-      const { name } = this.$route;
-      switch (name) {
-        case "Gender":
-          this.$store.dispatch("updateQuestionHasSelectorOptions", true);
-          this.$store.dispatch("updateFormSelectorOptions", {
-            female: "Female",
-            male: "Male",
-          });
-          return;
-        default:
-          this.$store.dispatch("updateFormSelectorOptions", null);
-          this.$store.dispatch("updateQuestionHasSelectorOptions", false);
-          return "Error in formQuestionSelectionOptions computed property";
-      }
-    },
-  }
 };
 </script>

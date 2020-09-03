@@ -1,9 +1,7 @@
 <template>
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <router-view
-        :legend-text="fieldSetLegend"
-        :form-question-label="formQuestionLabel"
+      <router-view :legend-text="fieldSetLegend" :form-question-label="formQuestionLabel"
       />
       <GovukButton
         button-text="Continue"
@@ -21,6 +19,11 @@ export default {
   components: {
     GovukButton,
   },
+  data: () => ({
+    questionProperties: {
+      label: '',
+    }
+  }),
   computed: {
     fieldSetLegend() {
       const { name } = this.$route;
@@ -39,7 +42,21 @@ export default {
       const { name } = this.$route;
       switch (name) {
         case "Name":
-          return "Full Name";
+          return {
+              label: 'Full Name'
+          }
+        case "Date of birth":
+          return {
+            label: ''
+          }
+        case "Gender":
+          return {
+            label: '',
+            selectorOptions: {
+              male: 'Male',
+              female: 'Female'
+            }
+          }
         default:
           return "";
       }

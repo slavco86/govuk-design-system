@@ -18,7 +18,7 @@ export default {
       type: String,
     },
     formQuestionLabel: {
-      type: String,
+      type: Object,
     },
   },
 };
