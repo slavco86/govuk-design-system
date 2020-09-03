@@ -11,6 +11,9 @@ export default new Vuex.Store({
       "Gender": null,
     },
     dateOfBirthRawValues: ["", "", ""],
+    questionHasSelectorOptions: false,
+    formSelectorOptions: {
+    }
   },
   mutations: {
     setFormDataFirstName: (state, value) => (state.formData["Name"] = value),
@@ -29,6 +32,8 @@ export default new Vuex.Store({
       state.dateOfBirthRawValues[2] = value;
       state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
     },
+    setFormSelectorOptions: (state, value) => (state.formSelectorOptions = value),
+    setQuestionHasSelectorOptions: (state, value) => (state.questionHasSelectorOptions = value),
   },
   getters: {
     getFormData: (state) => state.formData,
@@ -37,7 +42,14 @@ export default new Vuex.Store({
     getDateOfBirthDay: (state) => state.dateOfBirthRawValues[0],
     getDateOfBirthMonth: (state) => state.dateOfBirthRawValues[1],
     getDateOfBirthYear: (state) => state.dateOfBirthRawValues[2],
+    getFormSelectorOptions: (state) => state.formSelectorOptions,
+    getQuestionHasSelectorOptions: (state) => state.questionHasSelectorOptions,
   },
-  actions: {},
+  actions: {
+    updateFormSelectorOptions: (context, value) =>
+        context.commit("setFormSelectorOptions", value),
+    updateQuestionHasSelectorOptions: (context, value) =>
+        context.commit("setQuestionHasSelectorOptions", value),
+  },
   modules: {},
 });
