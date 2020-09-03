@@ -1,6 +1,6 @@
 <template>
   <div class="govuk-form-group">
-    <GovukLabel :form-question-label="legendText" />
+    <GovukLabel :form-question-label="formQuestionLabel.label" />
     <div v-if="formQuestionLabel.selectorOptions">
       <router-view
         :form-selector-options="item"
