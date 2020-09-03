@@ -6,14 +6,17 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     formData: {
-      "Name": null,
+      Name: null,
       "Date of birth": null,
-      "Gender": null,
+      Gender: null,
     },
-    dateOfBirthRawValues: ["", "", ""],
+    dateOfBirthRawValues: {
+      day: "",
+      month: "",
+      year: "",
+    },
     questionHasSelectorOptions: false,
-    formSelectorOptions: {
-    }
+    formSelectorOptions: {},
   },
   mutations: {
     setFormDataFirstName: (state, value) => (state.formData["Name"] = value),
@@ -21,36 +24,53 @@ export default new Vuex.Store({
       (state.formData["Date of birth"] = value),
     setFormDataGender: (state, value) => (state.formData["Gender"] = value),
     setFormDataDateOfBirthDay(state, value) {
-      state.dateOfBirthRawValues[0] = value;
-      state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
+      state.dateOfBirthRawValues.day = value;
+      state.formData["Date of birth"] =
+        state.dateOfBirthRawValues.day +
+        "." +
+        state.dateOfBirthRawValues.month +
+        "." +
+        state.dateOfBirthRawValues.year;
     },
     setFormDataDateOfBirthMonth(state, value) {
       console.log("value: ", value);
-      state.dateOfBirthRawValues[1] = value;
-      state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
+      state.dateOfBirthRawValues.month = value;
+      state.formData["Date of birth"] =
+        state.dateOfBirthRawValues.day +
+        "." +
+        state.dateOfBirthRawValues.month +
+        "." +
+        state.dateOfBirthRawValues.year;
     },
     setFormDataDateOfBirthYear(state, value) {
-      state.dateOfBirthRawValues[2] = value;
-      state.formData["Date of birth"] = state.dateOfBirthRawValues.join('.')
+      state.dateOfBirthRawValues.year = value;
+      state.formData["Date of birth"] =
+        state.dateOfBirthRawValues.day +
+        "." +
+        state.dateOfBirthRawValues.month +
+        "." +
+        state.dateOfBirthRawValues.year;
     },
-    setFormSelectorOptions: (state, value) => (state.formSelectorOptions = value),
-    setQuestionHasSelectorOptions: (state, value) => (state.questionHasSelectorOptions = value),
+    setFormSelectorOptions: (state, value) =>
+      (state.formSelectorOptions = value),
+    setQuestionHasSelectorOptions: (state, value) =>
+      (state.questionHasSelectorOptions = value),
   },
   getters: {
     getFormData: (state) => state.formData,
     getNameValue: (state) => state.formData["Name"],
     getGenderValue: (state) => state.formData["Gender"],
-    getDateOfBirthDay: (state) => state.dateOfBirthRawValues[0],
-    getDateOfBirthMonth: (state) => state.dateOfBirthRawValues[1],
-    getDateOfBirthYear: (state) => state.dateOfBirthRawValues[2],
+    getDateOfBirthDay: (state) => state.dateOfBirthRawValues.day,
+    getDateOfBirthMonth: (state) => state.dateOfBirthRawValues.month,
+    getDateOfBirthYear: (state) => state.dateOfBirthRawValues.year,
     getFormSelectorOptions: (state) => state.formSelectorOptions,
     getQuestionHasSelectorOptions: (state) => state.questionHasSelectorOptions,
   },
   actions: {
     updateFormSelectorOptions: (context, value) =>
-        context.commit("setFormSelectorOptions", value),
+      context.commit("setFormSelectorOptions", value),
     updateQuestionHasSelectorOptions: (context, value) =>
-        context.commit("setQuestionHasSelectorOptions", value),
+      context.commit("setQuestionHasSelectorOptions", value),
   },
   modules: {},
 });
