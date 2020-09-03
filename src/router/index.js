@@ -4,6 +4,7 @@ import Layout from "../views/Layout.vue";
 import Questions from "../views/Questions.vue";
 import SummaryList from "../views/SummaryList.vue";
 import GovukFieldset from "../components/GovukFieldset.vue";
+import GovukFormGroup from "../components/GovukFormGroup.vue";
 
 Vue.use(VueRouter);
 
@@ -22,18 +23,43 @@ const routes = [
             name: "Name",
             component: GovukFieldset,
             props: true,
+            children: [
+              {
+                path: "/name",
+                name: "Name",
+                component: GovukFormGroup,
+                props: true,
+              },
+            ]
           },
+
           {
             path: "/date-of-birth",
             name: "Date of birth",
             component: GovukFieldset,
             props: true,
+            children: [
+              {
+                path: "/date-of-birth",
+                name: "Date of birth",
+                component: GovukFormGroup,
+                props: true,
+              },
+            ]
           },
           {
             path: "/gender",
             name: "Gender",
             component: GovukFieldset,
             props: true,
+            children: [
+              {
+                path: "/gender",
+                name: "Gender",
+                component: GovukFormGroup,
+                props: true,
+              },
+            ]
           },
         ],
       },
