@@ -6,7 +6,7 @@ export default {
         switch (name) {
           case "Name":
             return this.$store.getters.getNameValue;
-          case "Date of Birth":
+          case "Date of birth":
             return this.$store.getters.getDOBValue;
           case "Gender":
             return this.$store.getters.getGenderValue;
@@ -18,7 +18,7 @@ export default {
           case "Name":
             this.$store.commit("setFormDataFirstName", value);
             break
-          case "Date of Birth":
+          case "Date of birth":
             this.$store.commit("setFormDataDateOfBirth", value);
             break
           case "Gender":

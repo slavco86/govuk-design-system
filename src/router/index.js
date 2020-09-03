@@ -25,7 +25,7 @@ const routes = [
           },
           {
             path: "/date-of-birth",
-            name: "Date of Birth",
+            name: "Date of birth",
             component: GovukFieldset,
             props: true,
           },

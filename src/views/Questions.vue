@@ -32,7 +32,7 @@ export default {
       switch (name) {
         case "Name":
           return "What is your name?";
-        case "Date of Birth":
+        case "Date of birth":
           return "What is your date of birth?";
         case "Gender":
           return "What is your gender?";
@@ -45,8 +45,8 @@ export default {
       switch (name) {
         case "Name":
           return "Full Name";
-        case "Date of Birth":
-          return "Date of Birth";
+        case "Date of birth":
+          return "Date of birth";
         case "Gender":
           return "Gender";
         default:
