@@ -27,9 +27,9 @@ export default new Vuex.Store({
       state.dateOfBirthRawValues.day = value;
       state.formData["Date of birth"] =
         state.dateOfBirthRawValues.day +
-        "." +
+        " " +
         state.dateOfBirthRawValues.month +
-        "." +
+        " " +
         state.dateOfBirthRawValues.year;
     },
     setFormDataDateOfBirthMonth(state, value) {
@@ -37,18 +37,18 @@ export default new Vuex.Store({
       state.dateOfBirthRawValues.month = value;
       state.formData["Date of birth"] =
         state.dateOfBirthRawValues.day +
-        "." +
+        " " +
         state.dateOfBirthRawValues.month +
-        "." +
+        " " +
         state.dateOfBirthRawValues.year;
     },
     setFormDataDateOfBirthYear(state, value) {
       state.dateOfBirthRawValues.year = value;
       state.formData["Date of birth"] =
         state.dateOfBirthRawValues.day +
-        "." +
+        " " +
         state.dateOfBirthRawValues.month +
-        "." +
+        " " +
         state.dateOfBirthRawValues.year;
     },
   },
