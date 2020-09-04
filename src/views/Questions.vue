@@ -86,6 +86,42 @@ export default {
     },
   },
   methods: {
+    checkIfBirthDateIsInPast() {
+      let dateToday = new Date();
+
+      let ddToday = dateToday.getDate();
+      let mmToday = dateToday.getMonth() + 1;
+      let yyyyToday = dateToday.getFullYear();
+
+      if (ddToday < 10) {
+        ddToday = "0" + ddToday;
+      }
+
+      if (mmToday < 10) {
+        mmToday = "0" + mmToday;
+      }
+      dateToday = yyyyToday + mmToday + ddToday;
+
+      let ddBirthDate = this.getDateOfBirthDay;
+      let mmBirthDate = this.getDateOfBirthMonth;
+      let yyyyBirthDate = this.getDateOfBirthYear;
+
+      if (this.getDateOfBirthDay < 10) {
+        ddBirthDate = "0" + ddBirthDate;
+      }
+
+      if (this.getDateOfBirthMonth < 10) {
+        mmBirthDate = "0" + mmBirthDate;
+      }
+
+      let birthDate = yyyyBirthDate + mmBirthDate + ddBirthDate;
+
+      if (birthDate <= dateToday) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     getNextRoute() {
       const { name } = this.$route;
       switch (name) {
@@ -104,11 +140,11 @@ export default {
           mustContainFullName: /^[a-zA-Z]+ [a-zA-Z]+$/,
         },
         dateOfBirth: {
-          mustContainValue: !!this.getFormData["Date of birth"],
           mustContainDay: !!this.getDateOfBirthDay,
           mustContainMonth: !!this.getDateOfBirthMonth,
           mustContainYear: !!this.getDateOfBirthYear,
           mustContainOnlyNumbers: /^[0-9]+$/,
+          mustBePresentOrPast: this.checkIfBirthDateIsInPast(),
         },
         gender: {
           mustContainValue: !!this.getFormData.Gender,
@@ -134,7 +170,11 @@ export default {
           }
           break;
         case "Date of birth":
-          if (!formValidationRules.dateOfBirth.mustContainValue) {
+          if (
+            !formValidationRules.dateOfBirth.mustContainDay &&
+            !formValidationRules.dateOfBirth.mustContainMonth &&
+            !formValidationRules.dateOfBirth.mustContainYear
+          ) {
             this.errorMessage = "Please provide your date of birth.";
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else if (
@@ -175,10 +215,13 @@ export default {
               this.getDateOfBirthMonth
             ) ||
             !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthMonth
+              this.getDateOfBirthYear
             )
           ) {
             this.errorMessage = "Only numbers are allowed.";
+            this.$store.dispatch("updateFormErrorIsActive", true);
+          } else if (!formValidationRules.dateOfBirth.mustBePresentOrPast) {
+            this.errorMessage = "Birth date can not be in the future.";
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else {
             this.$store.dispatch("updateFormErrorIsActive", false);
