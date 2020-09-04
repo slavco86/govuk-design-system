@@ -31,8 +31,5 @@ export default {
   computed: {
     ...mapGetters(["formErrorIsActive"]),
   },
-  mounted() {
-    console.log('formQuestionProperties.errorMessage: ', this.formQuestionProperties);
-  }
 };
 </script>
