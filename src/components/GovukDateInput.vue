@@ -18,6 +18,7 @@
             autocomplete="bday-day"
             pattern="[0-9]*"
             inputmode="numeric"
+            maxlength="2"
           />
         </div>
       </div>
@@ -35,6 +36,7 @@
             autocomplete="bday-month"
             pattern="[0-9]*"
             inputmode="numeric"
+            maxlength="2"
           />
         </div>
       </div>
@@ -52,6 +54,7 @@
             autocomplete="bday-year"
             pattern="[0-9]*"
             inputmode="numeric"
+            maxlength="4"
           />
         </div>
       </div>
