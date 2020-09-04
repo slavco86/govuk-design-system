@@ -1,24 +1,31 @@
-# deloitte-prelim-project
+# Preliminary Task
 
-## Project setup
-```
-npm install
-```
+## Structure
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+App
+└───Layout view
+    │   │
+    │   └───Questions view
+    │       └───Components
+    │
+    └───────Summary view
+            └───Components
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Notes
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Prominent use of Vue Router to structure views and components
+- Components kept as dumb as possible, with data and functions passed in
+- Switch statements have been used to check which route user is on (by using named routes) and syncing data accordingly
+
+## Installation
+
+1. Clone repo
+2. Run `npm i` to install dependencies
+5. Run `npm run serve` to start the app in development mode
+6.  Navigate to `http://localhost:8080/`
+
+## Todos
+
+- I could have added more form validation rules, but I think I added enough for demonstration purposes
