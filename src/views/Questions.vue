@@ -91,17 +91,6 @@ export default {
           return "Summary List";
       }
     },
-    getPreviousRoute() {
-      const { name } = this.$route;
-      switch (name) {
-        case "Summary List":
-          return "Gender";
-        case "Gender":
-          return "Date of birth";
-        case "Date of birth":
-          return "Name";
-      }
-    },
     navigateToNextRoute() {
       const nameInputIsValid = !!this.getFormData.Name;
       const dateOfBirthInputIsValid = !!this.getFormData["Date of birth"];
@@ -128,9 +117,6 @@ export default {
         default:
           console.log("Error in navigateToNextRoute()");
       }
-    },
-    navigateToPreviousRoute() {
-      this.$router.push({ name: this.getPreviousRoute() });
     },
   },
 };

@@ -16,7 +16,23 @@ export default {
   components: {
     GovukHeader,
     GovukBackLink,
-    GovukFooter
+    GovukFooter,
+  },
+  methods: {
+    getPreviousRoute() {
+      const { name } = this.$route;
+      switch (name) {
+        case "Summary List":
+          return "Gender";
+        case "Gender":
+          return "Date of birth";
+        case "Date of birth":
+          return "Name";
+      }
+    },
+    navigateToPreviousRoute() {
+      this.$router.push({ name: this.getPreviousRoute() });
+    },
   },
 };
 </script>
