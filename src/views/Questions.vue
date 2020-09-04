@@ -9,7 +9,7 @@
       >
         <router-view
           :legend-text="fieldSetLegend"
-          :form-question-label="formQuestionLabel"
+          :form-question-properties="formQuestionProperties"
         />
       </div>
       <GovukButton
@@ -57,7 +57,7 @@ export default {
     // This name is incorrect, but if I attempt to change it to 'formQuestionProperties',
     // and reflect the changes in child component, the value always returns as 'undefined'.
     // Can't work out why.
-    formQuestionLabel() {
+    formQuestionProperties() {
       const { name } = this.$route;
       switch (name) {
         case "Name":

@@ -1,17 +1,17 @@
 <template>
   <div class="govuk-form-group">
-    <GovukLabel :form-question-label="formQuestionLabel.label" />
-    <div v-if="formQuestionLabel.radioOptions">
+    <GovukLabel :form-question-label="formQuestionProperties.label" />
+    <div v-if="formQuestionProperties.radioOptions">
       <div class="govuk-radios govuk-radios--inline">
         <router-view
           :form-selector-options="item"
-          v-for="item in formQuestionLabel.radioOptions"
+          v-for="item in formQuestionProperties.radioOptions"
           :key="item"
         />
       </div>
     </div>
     <div v-else>
-      <router-view :form-question-label="formQuestionLabel" />
+      <router-view :form-question-label="formQuestionProperties" />
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
   },
   props: {
     legendText: String,
-    formQuestionLabel: Object,
+    formQuestionProperties: Object,
   },
 };
 </script>
