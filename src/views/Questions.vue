@@ -54,9 +54,6 @@ export default {
           return "Error in fieldSetLegend computed property";
       }
     },
-    // This name is incorrect, but if I attempt to change it to 'formQuestionProperties',
-    // and reflect the changes in child component, the value always returns as 'undefined'.
-    // Can't work out why.
     formQuestionProperties() {
       const { name } = this.$route;
       switch (name) {
@@ -238,7 +235,7 @@ export default {
           }
           break;
         default:
-          console.log("Error in navigateToNextRoute()");
+         return "Error in navigateToNextRoute()"
       }
     },
   },
