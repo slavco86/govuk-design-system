@@ -1,7 +1,7 @@
 <template>
   <div class="govuk-width-container">
     <GovukFieldsetLegend :legend-text="legendText" />
-    <GovukSummaryList :form-data="getFormData"/>
+    <GovukSummaryList :form-data="formData"/>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     GovukFieldsetLegend
   },
   computed: {
-    ...mapGetters(["getFormData"]),
+    ...mapGetters(["formData"]),
   }
 };
 </script>

@@ -53,15 +53,13 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    getFormErrorIsActive: (state) => state.formErrorIsActive,
-    getFormData: (state) => state.formData,
-    getNameValue: (state) => state.formData["Name"],
-    getGenderValue: (state) => state.formData["Gender"],
-    getDateOfBirthDay: (state) => state.dateOfBirthRawValues.day,
-    getDateOfBirthMonth: (state) => state.dateOfBirthRawValues.month,
-    getDateOfBirthYear: (state) => state.dateOfBirthRawValues.year,
-    getFormSelectorOptions: (state) => state.formSelectorOptions,
-    getQuestionHasSelectorOptions: (state) => state.questionHasSelectorOptions,
+    formErrorIsActive: (state) => state.formErrorIsActive,
+    formData: (state) => state.formData,
+    nameValue: (state) => state.formData["Name"],
+    genderValue: (state) => state.formData["Gender"],
+    dateOfBirthDay: (state) => state.dateOfBirthRawValues.day,
+    dateOfBirthMonth: (state) => state.dateOfBirthRawValues.month,
+    dateOfBirthYear: (state) => state.dateOfBirthRawValues.year,
   },
   actions: {
     updateFormErrorIsActive: (context, value) =>

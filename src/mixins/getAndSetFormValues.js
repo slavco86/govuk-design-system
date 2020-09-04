@@ -5,9 +5,9 @@ export default {
         const { name } = this.$route;
         switch (name) {
           case "Name":
-            return this.$store.getters.getNameValue;
+            return this.$store.getters.nameValue;
           case "Gender":
-            return this.$store.getters.getGenderValue;
+            return this.$store.getters.genderValue;
         }
       },
       set(value) {
@@ -24,7 +24,7 @@ export default {
     dateDay: {
       get() {
         if (this.$route.name === "Date of birth") {
-          return this.$store.getters.getDateOfBirthDay;
+          return this.$store.getters.dateOfBirthDay;
         }
       },
       set(value) {
@@ -36,7 +36,7 @@ export default {
     dateMonth: {
       get() {
         if (this.$route.name === "Date of birth") {
-          return this.$store.getters.getDateOfBirthMonth;
+          return this.$store.getters.dateOfBirthMonth;
         }
       },
       set(value) {
@@ -48,7 +48,7 @@ export default {
     dateYear: {
       get() {
         if (this.$route.name === "Date of birth") {
-          return this.$store.getters.getDateOfBirthYear;
+          return this.$store.getters.dateOfBirthYear;
         }
       },
       set(value) {

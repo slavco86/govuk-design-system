@@ -1,7 +1,7 @@
 <template>
   <fieldset class="govuk-fieldset">
     <GovukFieldsetLegend :legend-text="legendText" />
-    <GovukErrorMessage v-if="getFormErrorIsActive" :error-message="formQuestionLabel.errorMessage" />
+    <GovukErrorMessage v-if="formErrorIsActive" :error-message="formQuestionLabel.errorMessage" />
     <router-view :form-question-label="formQuestionLabel" />
   </fieldset>
 </template>
@@ -26,7 +26,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["getFormErrorIsActive"]),
+    ...mapGetters(["formErrorIsActive"]),
   },
 };
 </script>

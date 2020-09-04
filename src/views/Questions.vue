@@ -3,8 +3,8 @@
     <main class="govuk-main-wrapper" id="main-content" role="main">
       <div
         :class="{
-          'govuk-form-group': getFormErrorIsActive,
-          'govuk-form-group--error': getFormErrorIsActive,
+          'govuk-form-group': formErrorIsActive,
+          'govuk-form-group--error': formErrorIsActive,
         }"
       >
         <router-view
@@ -36,11 +36,11 @@ export default {
     errorMessage: "",
   }),
   computed: {
-    ...mapGetters(["getFormData"]),
-    ...mapGetters(["getFormErrorIsActive"]),
-    ...mapGetters(["getDateOfBirthDay"]),
-    ...mapGetters(["getDateOfBirthMonth"]),
-    ...mapGetters(["getDateOfBirthYear"]),
+    ...mapGetters(["formData"]),
+    ...mapGetters(["formErrorIsActive"]),
+    ...mapGetters(["dateOfBirthDay"]),
+    ...mapGetters(["dateOfBirthMonth"]),
+    ...mapGetters(["dateOfBirthYear"]),
     fieldSetLegend() {
       const { name } = this.$route;
       switch (name) {
@@ -102,15 +102,15 @@ export default {
       }
       dateToday = yyyyToday + mmToday + ddToday;
 
-      let ddBirthDate = this.getDateOfBirthDay;
-      let mmBirthDate = this.getDateOfBirthMonth;
-      let yyyyBirthDate = this.getDateOfBirthYear;
+      let ddBirthDate = this.dateOfBirthDay;
+      let mmBirthDate = this.dateOfBirthMonth;
+      let yyyyBirthDate = this.dateOfBirthYear;
 
-      if (this.getDateOfBirthDay < 10) {
+      if (this.dateOfBirthDay < 10) {
         ddBirthDate = "0" + ddBirthDate;
       }
 
-      if (this.getDateOfBirthMonth < 10) {
+      if (this.dateOfBirthMonth < 10) {
         mmBirthDate = "0" + mmBirthDate;
       }
 
@@ -136,18 +136,18 @@ export default {
     navigateToNextRoute() {
       const formValidationRules = {
         name: {
-          mustContainValue: !!this.getFormData.Name,
+          mustContainValue: !!this.formData.Name,
           mustContainFullName: /^[a-zA-Z]+ [a-zA-Z]+$/,
         },
         dateOfBirth: {
-          mustContainDay: !!this.getDateOfBirthDay,
-          mustContainMonth: !!this.getDateOfBirthMonth,
-          mustContainYear: !!this.getDateOfBirthYear,
+          mustContainDay: !!this.dateOfBirthDay,
+          mustContainMonth: !!this.dateOfBirthMonth,
+          mustContainYear: !!this.dateOfBirthYear,
           mustContainOnlyNumbers: /^[0-9]+$/,
           mustBePresentOrPast: this.checkIfBirthDateIsInPast(),
         },
         gender: {
-          mustContainValue: !!this.getFormData.Gender,
+          mustContainValue: !!this.formData.Gender,
         },
       };
 
@@ -159,7 +159,7 @@ export default {
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else if (
             !formValidationRules.name.mustContainFullName.test(
-              this.getFormData.Name
+              this.formData.Name
             )
           ) {
             this.errorMessage = "Please provide both your first and last name.";
@@ -209,13 +209,13 @@ export default {
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else if (
             !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthDay
+              this.dateOfBirthDay
             ) ||
             !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthMonth
+              this.dateOfBirthMonth
             ) ||
             !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthYear
+              this.dateOfBirthYear
             )
           ) {
             this.errorMessage = "Only numbers are allowed.";
