@@ -33,7 +33,7 @@ export default {
     questionProperties: {
       label: "",
     },
-    errorIsActive: false,
+    errorMessage: '',
   }),
   computed: {
     ...mapGetters(["getFormData"]),
@@ -59,6 +59,7 @@ export default {
       switch (name) {
         case "Name":
           return {
+            errorMessage: this.errorMessage,
             label: "Full Name",
           };
         case "Date of birth":
@@ -101,6 +102,7 @@ export default {
           if (nameInputIsValid) {
             this.$router.push({ name: this.getNextRoute() });
           } else {
+            this.errorMessage = 'Input is invalid, try again.'
             this.$store.dispatch("updateFormErrorIsActive", true);
           }
           break;

@@ -7,6 +7,7 @@
 
 <script>
 import GovukFieldsetLegend from "./GovukFieldsetLegend";
+const mapGetters = require("vuex")["mapGetters"];
 
 export default {
   name: "GovukFieldset",
@@ -21,5 +22,8 @@ export default {
       type: Object,
     },
   },
+  computed: {
+    ...mapGetters(["getFormErrorIsActive"]),
+  }
 };
 </script>
