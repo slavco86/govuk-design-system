@@ -30,9 +30,6 @@ export default {
     GovukButton,
   },
   data: () => ({
-    questionProperties: {
-      label: "",
-    },
     errorMessage: "",
   }),
   computed: {
