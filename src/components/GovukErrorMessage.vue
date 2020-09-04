@@ -14,9 +14,3 @@ export default {
   },
 };
 </script>
-
-<script>
-  export default {
-    name: "GovukErrorMessage",
-  };
-</script>
