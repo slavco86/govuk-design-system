@@ -33,7 +33,7 @@ export default {
     questionProperties: {
       label: "",
     },
-    errorMessage: '',
+    errorMessage: "",
   }),
   computed: {
     ...mapGetters(["getFormData"]),
@@ -93,26 +93,44 @@ export default {
       }
     },
     navigateToNextRoute() {
-      const nameInputIsValid = !!this.getFormData.Name;
-      const dateOfBirthInputIsValid = !!this.getFormData["Date of birth"];
-      const genderSelectionInputIsValid = !!this.getFormData.Gender;
+      const formValidationRules = {
+        name: {
+          mustContainValue: !!this.getFormData.Name,
+          mustContainFullName: /^[a-zA-Z]+ [a-zA-Z]+$/,
+        },
+        dateOfBirth: {
+          mustContainValue: !!this.getFormData["Date of birth"],
+        },
+        gender: {
+          mustContainValue: !!this.getFormData.Gender,
+        },
+      };
+
       const { name } = this.$route;
       switch (name) {
         case "Name":
-          if (nameInputIsValid) {
-            this.$router.push({ name: this.getNextRoute() });
-          } else {
-            this.errorMessage = 'Input is invalid, try again.'
+          if (!formValidationRules.name.mustContainValue) {
+            this.errorMessage = "Please provide your full name.";
             this.$store.dispatch("updateFormErrorIsActive", true);
+          } else if (
+            !formValidationRules.name.mustContainFullName.test(
+              this.getFormData.Name
+            )
+          ) {
+            this.errorMessage = "Please provide both your first and last name.";
+            this.$store.dispatch("updateFormErrorIsActive", true);
+          } else {
+            this.$store.dispatch("updateFormErrorIsActive", false);
+            this.$router.push({ name: this.getNextRoute() });
           }
           break;
         case "Date of birth":
-          if (dateOfBirthInputIsValid) {
+          if (formValidationRules.dateOfBirth.mustContainValue) {
             this.$router.push({ name: this.getNextRoute() });
           }
           break;
         case "Gender":
-          if (genderSelectionInputIsValid) {
+          if (formValidationRules.gender.mustContainValue) {
             this.$router.push({ name: this.getNextRoute() });
           }
           break;
