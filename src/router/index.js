@@ -24,18 +24,15 @@ const routes = [
           {
             path: "/name",
             component: GovukFieldset,
-            props: true,
             children: [
               {
                 path: "/name",
                 component: GovukFormGroup,
-                props: true,
                 children: [
                   {
                     path: "/name",
                     name: "Name",
                     component: GovukInput,
-                    props: true,
                   },
                 ]
               },
@@ -45,18 +42,15 @@ const routes = [
           {
             path: "/date-of-birth",
             component: GovukFieldset,
-            props: true,
             children: [
               {
                 path: "/date-of-birth",
                 component: GovukFormGroup,
-                props: true,
                 children: [
                   {
                     path: "/date-of-birth",
                     name: "Date of birth",
                     component: GovukDateInput,
-                    props: true,
                   },
                 ]
               },
@@ -65,18 +59,15 @@ const routes = [
           {
             path: "/gender",
             component: GovukFieldset,
-            props: true,
             children: [
               {
                 path: "/gender",
                 component: GovukFormGroup,
-                props: true,
                 children: [
                   {
                     path: "/gender",
                     name: "Gender",
                     component: GovukRadios,
-                    props: true,
                   },
                 ]
               },
