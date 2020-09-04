@@ -1,7 +1,10 @@
 <template>
   <fieldset class="govuk-fieldset">
     <GovukFieldsetLegend :legend-text="legendText" />
-    <GovukErrorMessage v-if="formErrorIsActive" :error-message="formQuestionProperties.errorMessage" />
+    <GovukErrorMessage
+      v-if="formErrorIsActive"
+      :error-message="formQuestionProperties.errorMessage"
+    />
     <router-view :form-question-properties="formQuestionProperties" />
   </fieldset>
 </template>

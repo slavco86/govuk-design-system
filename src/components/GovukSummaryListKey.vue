@@ -1,14 +1,14 @@
 <template>
-    <dt class="govuk-summary-list__key">
-        {{ formDataKeys }}
-    </dt>
+  <dt class="govuk-summary-list__key">
+    {{ formDataKeys }}
+  </dt>
 </template>
 
 <script>
-    export default {
-        name: "GovukSummaryListKey",
-        props: {
-            formDataKeys: String,
-        },
-    };
+export default {
+  name: "GovukSummaryListKey",
+  props: {
+    formDataKeys: String,
+  },
+};
 </script>

@@ -34,9 +34,9 @@ const routes = [
                     name: "Name",
                     component: GovukInput,
                   },
-                ]
+                ],
               },
-            ]
+            ],
           },
 
           {
@@ -52,9 +52,9 @@ const routes = [
                     name: "Date of birth",
                     component: GovukDateInput,
                   },
-                ]
+                ],
               },
-            ]
+            ],
           },
           {
             path: "/gender",
@@ -69,9 +69,9 @@ const routes = [
                     name: "Gender",
                     component: GovukRadios,
                   },
-                ]
+                ],
               },
-            ]
+            ],
           },
         ],
       },

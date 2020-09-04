@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  export default {
-    name: "GovukButton",
-    props: {
-      buttonText: String,
-      buttonAction: Function
-    }
-  };
+export default {
+  name: "GovukButton",
+  props: {
+    buttonText: String,
+    buttonAction: Function,
+  },
+};
 </script>

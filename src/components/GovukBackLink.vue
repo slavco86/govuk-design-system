@@ -7,9 +7,9 @@
 <script>
 export default {
   name: "GovukBackLink",
-    props: {
-        buttonText: String,
-        linkAction: Function
-    }
+  props: {
+    buttonText: String,
+    linkAction: Function,
+  },
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <footer class="govuk-footer">
-      <div class="govuk-width-container">
+    <div class="govuk-width-container">
       <GovukFooterMeta />
-      </div>
+    </div>
   </footer>
 </template>
 

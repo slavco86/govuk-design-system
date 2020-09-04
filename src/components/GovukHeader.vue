@@ -1,7 +1,7 @@
 <template>
-    <header class="govuk-header" role="banner" data-module="govuk-header">
-      <GovukHeaderContainer />
-    </header>
+  <header class="govuk-header" role="banner" data-module="govuk-header">
+    <GovukHeaderContainer />
+  </header>
 </template>
 
 <script>

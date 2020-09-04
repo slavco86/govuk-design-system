@@ -232,7 +232,7 @@ export default {
           }
           break;
         default:
-         return "Error in navigateToNextRoute()"
+          return "Error in navigateToNextRoute()";
       }
     },
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="govuk-width-container">
     <GovukFieldsetLegend :legend-text="legendText" />
-    <GovukSummaryList :form-data="formData"/>
+    <GovukSummaryList :form-data="formData" />
   </div>
 </template>
 
@@ -13,14 +13,14 @@ import GovukFieldsetLegend from "../components/GovukFieldsetLegend";
 export default {
   name: "SummaryList",
   data: () => ({
-    legendText: 'Please review your details before submission'
+    legendText: "Please review your details before submission",
   }),
   components: {
     GovukSummaryList,
-    GovukFieldsetLegend
+    GovukFieldsetLegend,
   },
   computed: {
     ...mapGetters(["formData"]),
-  }
+  },
 };
 </script>

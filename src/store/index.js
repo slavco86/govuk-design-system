@@ -15,7 +15,7 @@ export default new Vuex.Store({
       month: "",
       year: "",
     },
-    formErrorIsActive: false
+    formErrorIsActive: false,
   },
   mutations: {
     setFormErrorIsActive: (state, value) => (state.formErrorIsActive = value),
@@ -62,7 +62,7 @@ export default new Vuex.Store({
   },
   actions: {
     updateFormErrorIsActive: (context, value) =>
-        context.commit("setFormErrorIsActive", value),
+      context.commit("setFormErrorIsActive", value),
   },
   modules: {},
 });

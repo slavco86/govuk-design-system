@@ -10,7 +10,7 @@ export default {
   props: {
     legendText: {
       type: String,
-    }
+    },
   },
 };
 </script>
