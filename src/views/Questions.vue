@@ -138,19 +138,6 @@ export default {
             this.errorMessage = "Please provide your date of birth.";
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else if (
-            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthDay
-            ) ||
-            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthMonth
-            ) ||
-            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
-              this.getDateOfBirthMonth
-            )
-          ) {
-            this.errorMessage = "Only numbers are allowed.";
-            this.$store.dispatch("updateFormErrorIsActive", true);
-          } else if (
             !formValidationRules.dateOfBirth.mustContainDay &&
             !formValidationRules.dateOfBirth.mustContainMonth
           ) {
@@ -179,6 +166,19 @@ export default {
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else if (!formValidationRules.dateOfBirth.mustContainYear) {
             this.errorMessage = "Please enter the year when you were born.";
+            this.$store.dispatch("updateFormErrorIsActive", true);
+          } else if (
+            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
+              this.getDateOfBirthDay
+            ) ||
+            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
+              this.getDateOfBirthMonth
+            ) ||
+            !formValidationRules.dateOfBirth.mustContainOnlyNumbers.test(
+              this.getDateOfBirthMonth
+            )
+          ) {
+            this.errorMessage = "Only numbers are allowed.";
             this.$store.dispatch("updateFormErrorIsActive", true);
           } else {
             this.$store.dispatch("updateFormErrorIsActive", false);
