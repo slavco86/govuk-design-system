@@ -31,6 +31,7 @@ export default {
       }
     },
     navigateToPreviousRoute() {
+      this.$store.dispatch("updateFormErrorIsActive", false);
       this.$router.push({ name: this.getPreviousRoute() });
     },
   },
