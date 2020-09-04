@@ -15,8 +15,10 @@ export default new Vuex.Store({
       month: "",
       year: "",
     },
+    formErrorIsActive: false
   },
   mutations: {
+    setFormErrorIsActive: (state, value) => (state.formErrorIsActive = value),
     setFormDataFirstName: (state, value) => (state.formData["Name"] = value),
     setFormDataDateOfBirth: (state, value) =>
       (state.formData["Date of birth"] = value),
@@ -51,6 +53,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    getFormErrorIsActive: (state) => state.formErrorIsActive,
     getFormData: (state) => state.formData,
     getNameValue: (state) => state.formData["Name"],
     getGenderValue: (state) => state.formData["Gender"],
@@ -59,6 +62,10 @@ export default new Vuex.Store({
     getDateOfBirthYear: (state) => state.dateOfBirthRawValues.year,
     getFormSelectorOptions: (state) => state.formSelectorOptions,
     getQuestionHasSelectorOptions: (state) => state.questionHasSelectorOptions,
+  },
+  actions: {
+    updateFormErrorIsActive: (context, value) =>
+        context.commit("setFormErrorIsActive", value),
   },
   modules: {},
 });

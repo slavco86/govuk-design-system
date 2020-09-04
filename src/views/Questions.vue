@@ -1,10 +1,12 @@
 <template>
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <router-view
-        :legend-text="fieldSetLegend"
-        :form-question-label="formQuestionLabel"
-      />
+      <div :class="{'govuk-form-group': getFormErrorIsActive, 'govuk-form-group--error': getFormErrorIsActive}">
+        <router-view
+          :legend-text="fieldSetLegend"
+          :form-question-label="formQuestionLabel"
+        />
+      </div>
       <GovukButton
         button-text="Continue"
         :button-action="navigateToNextRoute"
@@ -15,6 +17,7 @@
 
 <script>
 import GovukButton from "../components/GovukButton";
+const mapGetters = require("vuex")["mapGetters"];
 
 export default {
   name: "Questions",
@@ -25,8 +28,11 @@ export default {
     questionProperties: {
       label: "",
     },
+    errorIsActive: false,
   }),
   computed: {
+    ...mapGetters(["getFormData"]),
+    ...mapGetters(["getFormErrorIsActive"]),
     fieldSetLegend() {
       const { name } = this.$route;
       switch (name) {
